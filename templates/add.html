@@ -1,0 +1,19 @@
+{% block body %}
+<div class="add">
+   <h1>Add</h1>
+  <form method="post" role="form" action="{{ url_for('add') }}">
+    <div class="input-group">
+      <div class="form-group">
+        {{ form.name(class="form-control", placeholder="Name") }}
+      </div>
+      <div class="form-group">
+        {{ form.key(class="form-control", placeholder="Key") }}
+        {{ form.value(class="form-control", placeholder="Value") }}
+      <span class="input-group-btn">
+        <input type="submit" class="btn btn-primary " value="Add" />
+      </span>
+    </div>
+    {{ form.csrf_token }}
+  </form>
+</div>
+{% endblock %}
